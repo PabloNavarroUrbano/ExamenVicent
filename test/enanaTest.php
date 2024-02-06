@@ -32,6 +32,10 @@ class EnanaTest extends TestCase {
     public function testHeridaLeveMuere() {
         #Se probará el efecto de una herida leve a una Enana con puntos de vida insuficientes para sobrevivir al ataque
         #Se tendrá que probar que la vida es menor que 0 y además que su situación es muerta
+        $julia = new Enana('Julia', 9);
+        $julia->heridaLeve();
+        $this->assertEquals(-1, $julia->getPuntosVida());
+        $this->assertEquals('muerta', $julia->getSituacion());
 
     }
 
