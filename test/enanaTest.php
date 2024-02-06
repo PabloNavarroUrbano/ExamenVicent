@@ -17,10 +17,10 @@ class EnanaTest extends TestCase {
         $this->assertEquals(0, $maria->getPuntosVida());
         $this->assertEquals('limbo', $maria->getSituacion());
 
-        $juana = new Enana('Juana', 0);
+        $juana = new Enana('Juana', -5);
         $this->assertEquals('Maria', $juana->getNombre());
-        $this->assertEquals(0, $juana->getPuntosVida());
-        $this->assertEquals('limbo', $juana->getSituacion());
+        $this->assertEquals(-5, $juana->getPuntosVida());
+        $this->assertEquals('muerta', $juana->getSituacion());
     
     }
     public function testHeridaLeveVive() {
