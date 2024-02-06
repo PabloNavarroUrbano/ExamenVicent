@@ -46,7 +46,21 @@ class Enana
         #Recupera 10 puntos de vida y además cambia el valor de situacion si así fuera necesario.
         #Si la Enana está en el limbo, la pocima no le afecta, seguirá en el limbo con 0 puntos de vida.
         #Solo pocimaExtra puede rescatarla del limbo.
-        $this->puntosVida+=20;
+
+        if($this->situacion = 0){
+            $this->situacion = 'limbo';
+            $this->puntosVida = 0;
+        }else{
+            $this->puntosVida+=10;
+            if($this->puntosVida > 0){
+                $this->situacion = 'viva';
+            }else{
+                $this->situacion = 'muerta';
+            }
+        }
+        
+
+    
     }
 
     public function pocimaExtra(){
