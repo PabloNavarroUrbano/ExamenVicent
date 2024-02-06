@@ -24,6 +24,7 @@ class EnanaTest extends TestCase {
         #Se probará el efecto de una herida leve a una Enana con puntos de vida suficientes para sobrevivir al ataque
         #Se tendrá que probar que la vida es mayor que 0 y además que su situación es viva
         $julia = new Enana('Julia', 20);
+        $julia->heridaLeve();
         $this->assertEquals(10, $julia->getPuntosVida());
         $this->assertEquals('viva', $julia->getSituacion());
     }
