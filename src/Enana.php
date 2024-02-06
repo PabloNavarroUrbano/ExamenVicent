@@ -20,7 +20,7 @@ class Enana
         }else if($this->puntosVida === 0){
             $this->situacion = 'limbo';
         }else {
-            $this->situacion = 'muerta'
+            $this->situacion = 'muerta';
         }
     }
 
