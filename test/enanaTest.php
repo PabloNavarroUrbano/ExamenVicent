@@ -7,15 +7,40 @@ class EnanaTest extends TestCase {
     
     public function testCreandoEnana() {
         #Se probará la creación de enanas vivas, muertas y en limbo y se comprobará tanto la vida como el estado
-        $enana = new Enana('Julia', 10);
-        $this->assertEquals('Julia', $enana->getNombre());
-        $this->assertEquals(10, $enana->getPuntosVida());
-        $this->assertEquals('viva', $enana->getSituacion());
+        $julia = new Enana('Julia', 10);
+        $this->assertEquals('Julia', $julia->getNombre());
+        $this->assertEquals(10, $julia->getPuntosVida());
+        $this->assertEquals('viva', $julia->getSituacion());
+
+        $maria = new Enana('Maria', 0);
+        $this->assertEquals('Maria', $maria->getNombre());
+        $this->assertEquals(0, $maria->getPuntosVida());
+        $this->assertEquals('limbo', $maria->getSituacion());
+
+        $juana = new Enana('Juana', 0);
+        $this->assertEquals('Maria', $juana->getNombre());
+        $this->assertEquals(0, $juana->getPuntosVida());
+        $this->assertEquals('limbo', $juana->getSituacion());
     
     }
     public function testHeridaLeveVive() {
         #Se probará el efecto de una herida leve a una Enana con puntos de vida suficientes para sobrevivir al ataque
         #Se tendrá que probar que la vida es mayor que 0 y además que su situación es viva
+        $julia = new Enana('Julia', 10);
+        $julia->heridaLeve();
+        $this->assertEquals(0, $julia->getPuntosVida());
+        $this->assertEquals('limbo', $julia->getSituacion());
+
+        $maria = new Enana('Maria', 20);
+        $maria->heridaLeve();
+        $this->assertEquals(10, $maria->getPuntosVida());
+        $this->assertEquals('viva', $maria->getSituacion());
+
+        $juana = new Enana('Juana', 0);
+        $juana->heridaLeve();
+        $this->assertEquals(-10, $maria->getPuntosVida());
+        $this->assertEquals('muerta', $maria->getSituacion());
+
 
     }
 
